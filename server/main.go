@@ -1,10 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net"
 
-	pb "github.com/cleung2010/grpc-ing/protobuf"
+	pb "github.com/calvn/grpc-playground/protobuf"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )
@@ -13,7 +14,8 @@ import (
 type server struct{}
 
 func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
-	return &pb.HelloReply{Message: in.Message}, nil
+	message := fmt.Sprintf("Call from server: %s", in.Message)
+	return &pb.HelloReply{Message: message}, nil
 }
 
 const (

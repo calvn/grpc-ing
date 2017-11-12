@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	pb "github.com/cleung2010/grpc-ing/protobuf"
+	pb "github.com/calvn/grpc-playground/protobuf"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )
@@ -16,7 +16,6 @@ const (
 
 func main() {
 	// Connecting to the service
-	//
 	conn, err := grpc.Dial(address, grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
@@ -33,5 +32,5 @@ func main() {
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
 	}
-	log.Printf("Greeting: %s", r.Message)
+	log.Printf("Reply from client: %s", r.Message)
 }

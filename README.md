@@ -1,5 +1,6 @@
-# gRPC-ing
-Battling the first gRPC gym for the first badge!
+# grpc-playground
+
+Basic example on gRPC client-server communication in Go.
 
 ## Up and running
 
